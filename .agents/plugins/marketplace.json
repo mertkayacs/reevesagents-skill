@@ -1,0 +1,12 @@
+{
+  "name": "mertkayacs",
+  "interface": { "displayName": "reevesagents" },
+  "plugins": [
+    {
+      "name": "reevesagents",
+      "source": { "source": "local", "path": "./" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Productivity"
+    }
+  ]
+}

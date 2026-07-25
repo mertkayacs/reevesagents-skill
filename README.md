@@ -2,13 +2,13 @@
 
 Teach your AI coding CLI to spawn and drive a **team of other CLI agents** through
 the [reevesagents](https://github.com/mertkayacs/reevesagents) MCP server. This repo
-publishes the reevesagents skill (a `SKILL.md`) in two forms:
+publishes the reevesagents skill (a `SKILL.md`) as a **plugin + marketplace** for
+Claude Code, Codex, and Kimi Code, and as a **standalone skill** for any other
+skill-aware CLI (OpenCode, the legacy Kimi CLI, and so on).
 
-- a **Claude Code plugin + marketplace** (installs the skill and wires the MCP in one step), and
-- a **standalone skill** for Codex, Kimi, and OpenCode (one `SKILL.md`, installed with a script).
-
-The same skill also ships inside the `reevesagents` npm package (`reevesagents skills install`).
-This repo is for standalone discovery and the Claude Code marketplace.
+The same skill also ships inside the `reevesagents` npm package
+(`reevesagents skills install`). This repo is for standalone discovery and the
+per-CLI marketplaces.
 
 ## Prerequisite
 
@@ -27,16 +27,31 @@ npm install -g reevesagents
 ```
 
 Restart Claude Code. The plugin installs the `reevesagents` skill and registers the
-`reevesagents` MCP server (it runs `reevesagents mcp`). Ask it something like
-"spawn a codex agent to summarize the README and show me its output".
+`reevesagents` MCP server (it runs `reevesagents mcp`).
 
-To wire the MCP yourself instead of via the plugin, run `reevesagents attach claude`.
+## Codex
 
-## Codex, Kimi, OpenCode (and Claude Code, manually)
+```bash
+codex plugin marketplace add https://github.com/mertkayacs/reevesagents-skill
+codex plugin add reevesagents@mertkayacs
+```
+
+Start a new Codex session. The plugin bundles the skill and the MCP server.
+
+## Kimi Code
+
+```
+/plugins install https://github.com/mertkayacs/reevesagents-skill
+```
+
+Then `/reload`. Kimi Code reads `kimi.plugin.json`, which bundles the skill and the
+MCP server.
+
+## Any other CLI (OpenCode, legacy Kimi CLI, manual)
 
 These read `SKILL.md` from the shared skill directories. Clone and run the installer,
 which writes the skill to both `~/.claude/skills` and `~/.agents/skills` (every one of
-the four CLIs reads one of those):
+these CLIs reads one of those):
 
 ```bash
 git clone https://github.com/mertkayacs/reevesagents-skill
@@ -44,9 +59,8 @@ cd reevesagents-skill
 ./install.sh            # or ./install.sh uninstall
 ```
 
-Restart your CLI. Then wire the MCP with `reevesagents attach` (it runs each CLI's own
-`mcp add`), or use the reevesagents CLI's `reevesagents skills install`, which does the
-same copy.
+Restart your CLI, then wire the MCP with `reevesagents attach` (it runs each CLI's own
+`mcp add`). The reevesagents CLI's own `reevesagents skills install` does the same copy.
 
 ## What the skill does
 
@@ -58,14 +72,18 @@ it, and `stop` / `kill` / `reap` to end it. Full worked examples are in
 ## Layout
 
 ```
-.claude-plugin/
-  marketplace.json     # the "mertkayacs" marketplace, one plugin (source ./)
-  plugin.json          # the reevesagents plugin manifest
-.mcp.json              # registers the reevesagents MCP server (runs: reevesagents mcp)
-skills/reevesagents/
-  SKILL.md             # the skill (identical to the one shipped in the npm package)
-install.sh             # cross-CLI installer for the standalone skill
+.claude-plugin/marketplace.json   Claude Code marketplace ("mertkayacs")
+.claude-plugin/plugin.json        Claude Code plugin manifest
+.codex-plugin/plugin.json         Codex plugin manifest
+.agents/plugins/marketplace.json  Codex marketplace ("mertkayacs")
+kimi.plugin.json                  Kimi Code plugin manifest
+.mcp.json                         MCP server config (runs: reevesagents mcp)
+skills/reevesagents/SKILL.md      the skill (every plugin manifest points here)
+install.sh                        cross-CLI installer for the standalone skill
 ```
+
+Each CLI reads its own manifest, and all of them point at the single
+`skills/reevesagents/SKILL.md`, so there is one copy of the skill.
 
 ## License
 
