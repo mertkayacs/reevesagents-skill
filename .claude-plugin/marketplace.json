@@ -1,0 +1,13 @@
+{
+  "name": "mertkayacs",
+  "owner": { "name": "Mert Kaya" },
+  "description": "Mert Kaya's Claude Code plugins. Currently: reevesagents, to spawn and drive a team of CLI coding agents.",
+  "plugins": [
+    {
+      "name": "reevesagents",
+      "source": "./",
+      "description": "Spawn and drive a team of CLI coding agents from Claude Code via the reevesagents MCP.",
+      "version": "1.0.0"
+    }
+  ]
+}
