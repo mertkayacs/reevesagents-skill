@@ -38,6 +38,11 @@ codex plugin add reevesagents@mertkayacs
 
 Start a new Codex session. The plugin bundles the skill and the MCP server.
 
+Codex sandboxes MCP tool calls by default, which blocks reevesagents from launching
+agents in tmux (the call gets cancelled). When you want it to drive agents, run
+Codex with full access, e.g. `codex --sandbox danger-full-access`, or add a profile
+that sets `sandbox_mode = "danger-full-access"` and run `codex --profile <name>`.
+
 ## Kimi Code
 
 ```
