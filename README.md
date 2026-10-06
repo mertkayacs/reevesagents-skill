@@ -1,71 +1,56 @@
-# reevesagents-skill
+# reevesagents-skill: instructions for an AI coding team
 
-A skill and plugin package that teaches AI coding CLIs to spawn and drive a team of
-other CLI agents through the [reevesagents](https://github.com/mertkayacs/reevesagents)
-MCP server. It ships the same skill (`skills/reevesagents/SKILL.md`) as a plugin and
-marketplace for Claude Code, Codex, and Kimi Code, and as a standalone skill for any
-other skill-aware CLI (OpenCode, the legacy Kimi CLI, and so on).
+Teach an AI coding tool to start, inspect and direct other coding tools through [reevesagents](https://github.com/mertkayacs/reevesagents). This repository supplies the operating instructions and plugin manifests; reevesagents runs the terminal sessions.
 
-## How to run
+Start with the standalone installation below. Plugin installation options are listed separately.
 
-The skill drives the reevesagents MCP, so the reevesagents CLI must be installed first
-(the runtime needs `tmux`):
+## Install the skill
 
-```bash
-npm install -g reevesagents
+Install reevesagents first. Its runtime needs Node.js 20.19 or newer, tmux 3.0 or newer, and an installed, authenticated AI coding tool.
+
+```sh
+npm install -g reevesagents && reevesagents doctor
 ```
 
-Then install the plugin for your CLI.
+Clone this repository and install the shared skill:
 
-Claude Code:
-
+```sh
+git clone https://github.com/mertkayacs/reevesagents-skill && cd reevesagents-skill && ./install.sh
 ```
+
+The installer copies [SKILL.md](skills/reevesagents/SKILL.md) into `~/.claude/skills/reevesagents` and `~/.agents/skills/reevesagents`. Restart your coding tool, then connect the Model Context Protocol (MCP) server to the host you want to control the team. For example, for Claude Code:
+
+```sh
+reevesagents attach claude && reevesagents hosts
+```
+
+Restart the host again to load the MCP connection. Attach only hosts you trust to control local tools. Keep permission prompts enabled for workers and review sensitive actions. The [MCP reference](https://github.com/mertkayacs/reevesagents/blob/master/docs/mcp.md) explains the connection and host requirements.
+
+## Plugin options
+
+The same skill is packaged for Claude Code, Codex and Kimi Code. The manifests are in [.claude-plugin](.claude-plugin), [.codex-plugin](.codex-plugin) and [kimi.plugin.json](kimi.plugin.json). Use your host's plugin installer with this repository as the marketplace source.
+
+<details>
+<summary>Claude Code commands</summary>
+
+Run these commands inside Claude Code:
+
+```text
 /plugin marketplace add mertkayacs/reevesagents-skill
+```
+
+```text
 /plugin install reevesagents@mertkayacs
 ```
 
-Codex:
+</details>
 
-```bash
-codex plugin marketplace add https://github.com/mertkayacs/reevesagents-skill
-codex plugin add reevesagents@mertkayacs
-```
+## Package contents
 
-Note: Codex sandboxes MCP tool calls by default, which blocks reevesagents from
-launching agents in tmux. Run Codex with full access, for example
-`codex --sandbox danger-full-access`, or use a profile that sets
-`sandbox_mode = "danger-full-access"`.
-
-Kimi Code:
-
-```
-/plugins install https://github.com/mertkayacs/reevesagents-skill
-```
-
-Then `/reload`.
-
-Any other CLI: clone this repo and run the installer, which copies the skill into the
-shared skill directories (`~/.claude/skills` and `~/.agents/skills`):
-
-```bash
-git clone https://github.com/mertkayacs/reevesagents-skill
-cd reevesagents-skill
-./install.sh            # or ./install.sh uninstall
-```
-
-Then restart the CLI and attach the MCP server with `reevesagents attach`.
-
-## Tech used
-
-- Markdown (`SKILL.md`), one copy referenced by every plugin manifest
-- JSON plugin and marketplace manifests (Claude Code, Codex, Kimi Code)
-- POSIX shell (`install.sh`, install and uninstall)
-- MCP (server config runs `reevesagents mcp`)
-
-## Status
-
-Active, 2026.
+- One [skill](skills/reevesagents/SKILL.md) shared by the plugin manifests.
+- [install.sh](install.sh) for standalone installation and removal (`./install.sh uninstall`).
+- MCP configuration that starts `reevesagents mcp`.
 
 ## License
 
-Apache License 2.0. See [LICENSE](LICENSE).
+[Apache-2.0](LICENSE). An [Eschatia Labs](https://eschatialabs.com) project by [Mert Kaya](https://mertkayacs.com).
