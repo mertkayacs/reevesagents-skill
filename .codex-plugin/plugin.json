@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Drive a team of other AI coding CLIs from your session through the reevesagents MCP server.",
   "author": { "name": "Mert Kaya", "url": "https://github.com/mertkayacs" },
+  "homepage": "https://reevesagents.mertkayacs.com",
   "repository": "https://github.com/mertkayacs/reevesagents",
   "license": "Apache-2.0",
   "keywords": ["mcp", "agents", "orchestration"],
@@ -15,8 +16,20 @@
   },
   "interface": {
     "displayName": "reevesagents",
-    "shortDescription": "Run and steer other AI coding CLIs from this session",
+    "shortDescription": "Run and steer AI coding CLIs",
     "longDescription": "Spawn and drive Claude Code, Codex, Kimi, and other CLIs, each in its own tmux window.",
-    "developerName": "Mert Kaya"
+    "developerName": "Mert Kaya",
+    "category": "Productivity",
+    "capabilities": ["Spawn agent CLIs in tmux", "Send prompts to agents", "Read agent output", "Stop and reap agents"],
+    "websiteURL": "https://reevesagents.mertkayacs.com",
+    "supportURL": "https://github.com/mertkayacs/reevesagents/issues",
+    "defaultPrompt": [
+      "List the agent CLIs installed on this machine.",
+      "Spawn a Codex worker to write tests for this module and report back.",
+      "Run Claude Code and Kimi in parallel on these two tasks."
+    ],
+    "brandColor": "#4263EB",
+    "composerIcon": "./assets/logo.svg",
+    "logo": "./assets/logo.svg"
   }
 }
