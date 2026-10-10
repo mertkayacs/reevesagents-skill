@@ -1,6 +1,6 @@
 {
   "name": "reevesagents",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Spawn and drive a team of CLI coding agents (Claude Code, Codex, Kimi, Qwen, OpenCode) from this session through the reevesagents MCP server.",
   "author": { "name": "Mert Kaya", "url": "https://mertkayacs.com" },
   "homepage": "https://reevesagents.mertkayacs.com",

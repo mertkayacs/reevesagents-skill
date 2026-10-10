@@ -7,7 +7,7 @@
       "name": "reevesagents",
       "source": "./",
       "description": "Spawn and drive a team of CLI coding agents from Claude Code via the reevesagents MCP.",
-      "version": "1.0.0"
+      "version": "1.0.1"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "name": "reevesagents",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Drive a team of other AI coding CLIs from your session through the reevesagents MCP server.",
   "mcpServers": {
     "reevesagents": {
