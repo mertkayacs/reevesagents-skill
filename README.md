@@ -1,5 +1,7 @@
 # reevesagents-skill: instructions for an AI coding team
 
+[![HOL Guard](https://img.shields.io/endpoint?url=https%3A%2F%2Fhol.org%2Fapi%2Fregistry%2Fbadges%2Fplugin%3Fslug%3Dmertkayacs%252Freevesagents-skill%26metric%3Dtrust)](https://hol.org/registry/plugins/mertkayacs%2Freevesagents-skill)
+
 Teach an AI coding tool to start, inspect and direct other coding tools through [reevesagents](https://github.com/mertkayacs/reevesagents). This repository supplies the operating instructions and plugin manifests; reevesagents runs the terminal sessions.
 
 Start with the standalone installation below. Plugin installation options are listed separately.
