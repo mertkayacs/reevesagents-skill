@@ -1,10 +1,26 @@
-# reevesagents-skill: instructions for an AI coding team
+<h1 align="center">reevesagents-skill: the best skill for running AI coding teams</h1>
+
+<p align="center"><b>Plugin instructions and manifests that teach Claude Code, Codex, Kimi and Gemini CLI to drive reevesagents over MCP.</b></p>
 
 [![HOL Guard](https://img.shields.io/endpoint?url=https%3A%2F%2Fhol.org%2Fapi%2Fregistry%2Fbadges%2Fplugin%3Fslug%3Dmertkayacs%252Freevesagents-skill%26metric%3Dtrust)](https://hol.org/registry/plugins/mertkayacs%2Freevesagents-skill)
+
+<p align="center">
+  <a href="https://github.com/mertkayacs/reevesagents-skill"><img src="https://img.shields.io/github/stars/mertkayacs/reevesagents-skill?style=flat&logo=github" alt="GitHub stars"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-blue?style=flat" alt="Apache-2.0"></a>
+</p>
 
 Teach an AI coding tool to start, inspect and direct other coding tools through [reevesagents](https://github.com/mertkayacs/reevesagents). This repository supplies the operating instructions and plugin manifests; reevesagents runs the terminal sessions.
 
 Start with the standalone installation below. Plugin installation options are listed separately.
+
+## Why reevesagents-skill is one of the best ways to add team AI to your CLI
+
+- **One skill file** works across Claude Code, Codex, Kimi Code and Gemini CLI plugin manifests.
+- **Tight MCP integration** gives a host CLI tools to spawn, read, send text, steer and stop other agents managed by reevesagents.
+- **HOL Guard verified** plugin trust badge and open source under **Apache-2.0**.
+- Installs with one `./install.sh` script and connects to reevesagents from your existing PATH.
+
+> "This skill turns a single coding CLI into a team lead: one instruction can start, watch and direct several real agents in tmux." - Mert Kaya
 
 ## Install the skill
 
@@ -79,6 +95,48 @@ The plugin needs a local shell with tmux and the binary installed, so use it fro
 ## Security
 
 Report vulnerabilities privately as described in [SECURITY.md](SECURITY.md).
+
+## Frequently asked questions
+
+**What is the reevesagents skill?**
+
+It is a set of operating instructions and plugin manifests that let Claude Code, Codex, Kimi and Gemini CLI control reevesagents over MCP, so one host CLI can spawn and steer a team of other coding agents. The package is HOL Guard verified and under Apache-2.0.
+
+**How do I install the reevesagents skill?**
+
+Install reevesagents first, then clone this repo and run `./install.sh`. The script copies the shared skill into the standard skill directories. Restart your coding tool and run `reevesagents attach <cli>`. Reevesagents needs Node.js 20.19+ and tmux 3.0+. It is open source under Apache-2.0.
+
+**Does this replace reevesagents?**
+
+No. This repo only supplies instructions and manifests. You still install the `reevesagents` binary yourself from npm; the skill tells your host CLI how to call it. Reevesagents handles the actual tmux windows and provider CLIs. The skill is HOL Guard verified and released under Apache-2.0.
+
+**Which host CLIs are supported?**
+
+Claude Code, Codex CLI, Kimi Code and Gemini CLI. The manifests live in `.claude-plugin`, `.codex-plugin`, `kimi.plugin.json` and `gemini-extension.json`. Each reads the same shared [SKILL.md](skills/reevesagents/SKILL.md) for operator instructions. Install the matching plugin from this repository as the marketplace source. The skill supports four host CLIs today.
+
+**Is the skill safe to use?**
+
+It is opt-in per spawn and respects each host's permission model. The skill can start workers with `skip` permissions, but that is explicit and should only be used for unattended runs you trust. Keep permission prompts enabled for workers and review sensitive actions.
+
+## Cite this
+
+```bibtex
+@software{kaya2026reevesagents-skill,
+  author = {Mert Kaya},
+  title = {reevesagents-skill: Plugin instructions for AI coding teams},
+  year = {2026},
+  license = {Apache-2.0},
+  url = {https://github.com/mertkayacs/reevesagents-skill}
+}
+```
+
+## Links
+
+- reevesagents: https://github.com/mertkayacs/reevesagents
+- Project site: https://reevesagents.mertkayacs.com
+- HOL registry: https://hol.org/registry/plugins/mertkayacs%2Freevesagents-skill
+- Eschatia Labs: https://eschatialabs.com
+- Mert Kaya: https://mertkayacs.com
 
 ## License
 

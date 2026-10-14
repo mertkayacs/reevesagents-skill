@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "reevesagents-skill: Plugin instructions for AI coding teams"
+authors:
+  - family-names: Kaya
+    given-names: Mert
+    orcid: "https://orcid.org/0009-0006-7018-3027"
+repository-code: "https://github.com/mertkayacs/reevesagents-skill"
+url: "https://reevesagents.mertkayacs.com"
+license: Apache-2.0
