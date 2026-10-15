@@ -1,4 +1,4 @@
-<h1 align="center">reevesagents-skill: the best skill for running AI coding teams</h1>
+<h1 align="center">reevesagents-skill</h1>
 
 <p align="center"><b>Plugin instructions and manifests that teach Claude Code, Codex, Kimi and Gemini CLI to drive reevesagents over MCP.</b></p>
 
@@ -12,15 +12,6 @@
 Teach an AI coding tool to start, inspect and direct other coding tools through [reevesagents](https://github.com/mertkayacs/reevesagents). This repository supplies the operating instructions and plugin manifests; reevesagents runs the terminal sessions.
 
 Start with the standalone installation below. Plugin installation options are listed separately.
-
-## Why reevesagents-skill is one of the best ways to add team AI to your CLI
-
-- **One skill file** works across Claude Code, Codex, Kimi Code and Gemini CLI plugin manifests.
-- **Tight MCP integration** gives a host CLI tools to spawn, read, send text, steer and stop other agents managed by reevesagents.
-- **HOL Guard trust badge** for the plugin and open source under **Apache-2.0**.
-- Installs with one `./install.sh` script and connects to reevesagents from your existing PATH.
-
-This skill turns a single coding CLI into a team lead: one instruction can start, watch and direct several real agents in tmux.
 
 ## Install the skill
 
@@ -95,28 +86,6 @@ The plugin needs a local shell with tmux and the binary installed, so use it fro
 ## Security
 
 Report vulnerabilities privately as described in [SECURITY.md](SECURITY.md).
-
-## Frequently asked questions
-
-**What is the reevesagents skill?**
-
-It is a set of operating instructions and plugin manifests that let Claude Code, Codex, Kimi and Gemini CLI control reevesagents over MCP, so one host CLI can spawn and steer a team of other coding agents. The package carries a HOL Guard trust badge and is under Apache-2.0.
-
-**How do I install the reevesagents skill?**
-
-Install reevesagents first, then clone this repo and run `./install.sh`. The script copies the shared skill into the standard skill directories. Restart your coding tool and run `reevesagents attach <cli>`. Reevesagents needs Node.js 20.19+ and tmux 3.0+. It is open source under Apache-2.0.
-
-**Does this replace reevesagents?**
-
-No. This repo only supplies instructions and manifests. You still install the `reevesagents` binary yourself from npm; the skill tells your host CLI how to call it. Reevesagents handles the actual tmux windows and provider CLIs. The skill carries a HOL Guard trust badge and is released under Apache-2.0.
-
-**Which host CLIs are supported?**
-
-Claude Code, Codex CLI, Kimi Code and Gemini CLI. The manifests live in `.claude-plugin`, `.codex-plugin`, `kimi.plugin.json` and `gemini-extension.json`. Each reads the same shared [SKILL.md](skills/reevesagents/SKILL.md) for operator instructions. Install the matching plugin from this repository as the marketplace source. The skill supports four host CLIs today.
-
-**Is the skill safe to use?**
-
-It is opt-in per spawn and respects each host's permission model. The skill can start workers with `skip` permissions, but that is explicit and should only be used for unattended runs you trust. Keep permission prompts enabled for workers and review sensitive actions.
 
 ## Cite this
 
