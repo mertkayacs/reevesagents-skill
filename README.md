@@ -1,13 +1,13 @@
-<h1 align="center">reevesagents-skill</h1>
-
-<p align="center"><b>Plugin instructions and manifests that teach Claude Code, Codex, Kimi and Gemini CLI to drive reevesagents over MCP.</b></p>
-
-[![HOL Guard](https://img.shields.io/endpoint?url=https%3A%2F%2Fhol.org%2Fapi%2Fregistry%2Fbadges%2Fplugin%3Fslug%3Dmertkayacs%252Freevesagents-skill%26metric%3Dtrust)](https://hol.org/registry/plugins/mertkayacs%2Freevesagents-skill)
+<p align="center"><a href="https://github.com/mertkayacs/reevesagents-skill"><img src="assets/banner.webp" width="1050" alt="reevesagents-skill is free and open source under the Apache-2.0 license"></a></p>
 
 <p align="center">
+  <a href="https://hol.org/registry/plugins/mertkayacs%2Freevesagents-skill"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fhol.org%2Fapi%2Fregistry%2Fbadges%2Fplugin%3Fslug%3Dmertkayacs%252Freevesagents-skill%26metric%3Dtrust" alt="HOL Guard"></a>
   <a href="https://github.com/mertkayacs/reevesagents-skill"><img src="https://img.shields.io/github/stars/mertkayacs/reevesagents-skill?style=flat&logo=github" alt="GitHub stars"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-blue?style=flat" alt="Apache-2.0"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/free%20and%20open%20source-006d77" alt="free and open source"></a>
 </p>
+
+reevesagents-skill is free and open source under the Apache-2.0 license.
 
 Teach an AI coding tool to start, inspect and direct other coding tools through [reevesagents](https://github.com/mertkayacs/reevesagents). This repository supplies the operating instructions and plugin manifests; reevesagents runs the terminal sessions.
 
