@@ -17,10 +17,10 @@ Start with the standalone installation below. Plugin installation options are li
 
 - **One skill file** works across Claude Code, Codex, Kimi Code and Gemini CLI plugin manifests.
 - **Tight MCP integration** gives a host CLI tools to spawn, read, send text, steer and stop other agents managed by reevesagents.
-- **HOL Guard verified** plugin trust badge and open source under **Apache-2.0**.
+- **HOL Guard trust badge** for the plugin and open source under **Apache-2.0**.
 - Installs with one `./install.sh` script and connects to reevesagents from your existing PATH.
 
-> "This skill turns a single coding CLI into a team lead: one instruction can start, watch and direct several real agents in tmux." - Mert Kaya
+This skill turns a single coding CLI into a team lead: one instruction can start, watch and direct several real agents in tmux.
 
 ## Install the skill
 
@@ -100,7 +100,7 @@ Report vulnerabilities privately as described in [SECURITY.md](SECURITY.md).
 
 **What is the reevesagents skill?**
 
-It is a set of operating instructions and plugin manifests that let Claude Code, Codex, Kimi and Gemini CLI control reevesagents over MCP, so one host CLI can spawn and steer a team of other coding agents. The package is HOL Guard verified and under Apache-2.0.
+It is a set of operating instructions and plugin manifests that let Claude Code, Codex, Kimi and Gemini CLI control reevesagents over MCP, so one host CLI can spawn and steer a team of other coding agents. The package carries a HOL Guard trust badge and is under Apache-2.0.
 
 **How do I install the reevesagents skill?**
 
@@ -108,7 +108,7 @@ Install reevesagents first, then clone this repo and run `./install.sh`. The scr
 
 **Does this replace reevesagents?**
 
-No. This repo only supplies instructions and manifests. You still install the `reevesagents` binary yourself from npm; the skill tells your host CLI how to call it. Reevesagents handles the actual tmux windows and provider CLIs. The skill is HOL Guard verified and released under Apache-2.0.
+No. This repo only supplies instructions and manifests. You still install the `reevesagents` binary yourself from npm; the skill tells your host CLI how to call it. Reevesagents handles the actual tmux windows and provider CLIs. The skill carries a HOL Guard trust badge and is released under Apache-2.0.
 
 **Which host CLIs are supported?**
 
