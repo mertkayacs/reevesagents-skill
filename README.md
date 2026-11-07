@@ -55,7 +55,7 @@ The skill gives your host CLI the steps to run a team. reevesagents runs the ter
     <td width="50%" valign="top">
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme/tour-codex-dark.webp">
-        <img src="docs/assets/readme/tour-codex-light.webp" alt="A terminal adding the reevesagents-skill marketplace to Codex and installing the reevesagents plugin">
+        <img src="docs/assets/readme/tour-codex-light.webp" alt="A terminal adding the reevesagents-skill marketplace to Codex, installing the reevesagents plugin and listing the files in the plugin&#x27;s install root">
       </picture>
       <h3>Install in Codex</h3>
       Two Codex commands add this repository as a marketplace and install the plugin. Restart Codex to load it.
@@ -63,7 +63,7 @@ The skill gives your host CLI the steps to run a team. reevesagents runs the ter
     <td width="50%" valign="top">
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme/tour-install-sh-dark.webp">
-        <img src="docs/assets/readme/tour-install-sh-light.webp" alt="A terminal cloning reevesagents-skill and running install.sh, which copies SKILL.md into two skill folders">
+        <img src="docs/assets/readme/tour-install-sh-light.webp" alt="A terminal cloning reevesagents-skill and running install.sh, which copies SKILL.md into two skill folders, then listing both folders and the headings of the installed SKILL.md">
       </picture>
       <h3>Skill folders only</h3>
       install.sh copies SKILL.md into ~/.claude/skills and ~/.agents/skills, for CLIs that read skill folders without a plugin.
