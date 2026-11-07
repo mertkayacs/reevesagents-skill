@@ -28,7 +28,7 @@
       "Spawn a Codex worker to write tests for this module and report back.",
       "Run Claude Code and Kimi in parallel on these two tasks."
     ],
-    "brandColor": "#4263EB",
+    "brandColor": "#006D77",
     "composerIcon": "./assets/logo.svg",
     "logo": "./assets/logo.svg"
   }
