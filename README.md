@@ -48,6 +48,49 @@ The skill gives your host CLI the steps to run a team. reevesagents runs the ter
 | <img src="docs/assets/readme/icons/hand.svg" width="18" height="18" alt=""> **Asks before it skips** | The skill tells the host to keep worker permission prompts on unless you asked otherwise, and to treat worker output as data. |
 | <img src="docs/assets/readme/icons/terminal.svg" width="18" height="18" alt=""> **Your machine, your logins** | reevesagents runs every agent as the real CLI in a tmux window, with that CLI's own login. Its Web UI listens on 127.0.0.1 only. |
 
+## A quick tour
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme/tour-codex-dark.webp">
+        <img src="docs/assets/readme/tour-codex-light.webp" alt="A terminal adding the reevesagents-skill marketplace to Codex and installing the reevesagents plugin">
+      </picture>
+      <h3>Install in Codex</h3>
+      Two Codex commands add this repository as a marketplace and install the plugin. Restart Codex to load it.
+    </td>
+    <td width="50%" valign="top">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme/tour-install-sh-dark.webp">
+        <img src="docs/assets/readme/tour-install-sh-light.webp" alt="A terminal cloning reevesagents-skill and running install.sh, which copies SKILL.md into two skill folders">
+      </picture>
+      <h3>Skill folders only</h3>
+      install.sh copies SKILL.md into ~/.claude/skills and ~/.agents/skills, for CLIs that read skill folders without a plugin.
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme/tour-drive-loop-dark.webp">
+        <img src="docs/assets/readme/tour-drive-loop-light.webp" alt="The Drive loop section of skills/reevesagents/SKILL.md, lines 22 to 34">
+      </picture>
+      <h3>The drive loop</h3>
+      The skill gives the host five steps: list providers, spawn, read, send text then press enter, and kill or stop.
+    </td>
+    <td width="50%" valign="top">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme/tour-kimi-manifest-dark.webp">
+        <img src="docs/assets/readme/tour-kimi-manifest-light.webp" alt="kimi.plugin.json with the shared skills folder and an MCP server that runs reevesagents mcp">
+      </picture>
+      <h3>One manifest per host</h3>
+      The Kimi Code manifest points at the shared skills folder and starts reevesagents mcp, like the other plugins.
+    </td>
+  </tr>
+</table>
+
+<p align="center"><sub>Terminal cards are real runs in a clean home directory. Code cards show the files as they are in this repository.</sub></p>
+
 ## Features
 
 **Contents**
